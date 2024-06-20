@@ -1,0 +1,48 @@
+extends layout.pug
+
+//- Extra css
+block head 
+    link(rel="stylesheet", href="/data_content_table.css")
+    link(rel="stylesheet", href="/admin.css")       
+
+block section1Wrap
+    div
+
+block dataContent
+    //- Table content part
+    table.data_table            
+        tr
+            th Continent
+            th Number Of Countries 
+            th Total Population 
+    
+        each continent in continents
+            tr
+                td 
+                    a(href=`/continents/${continent.Continent}`) #{continent.Continent}
+                td #{continent.countries}
+                td #{continent.Population}
+
+
+                                               
+    
+
+block extraScripts
+    //- script(type='module', src="./actions.mjs")
+
+    script.
+        //- import DatabaseService from './services/databaseservices.mjs';
+        //- const db = await DatabaseService.connect();
+        //- const {conn} = db;
+
+        const cityToDeleteInput = document.querySelector('#cityDelete');
+        const countryToDeleteInput = document.getElementById('countryDeleteCode');
+        const continentToDeleteInput = document.querySelector('#continentDelete');
+
+        cityToDeleteInput.addEventListener('change', (e) => {
+            fetch('/admin?delete:name')
+                //- .then(response => response.text())
+                //- .then(data => console.log(data))
+                //- .catch(error => console.error('Error:', error));
+        });
+        //- countryToDeleteInput.addEventListener('change', (e) => console.log(e.target.value));

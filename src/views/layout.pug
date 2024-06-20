@@ -1,0 +1,180 @@
+html(lang="en")
+    head
+        //- Meta tags
+        meta(charset="UTF-8")
+        title G01 SE Project
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Website description for SEO
+        meta(name="description", content="")
+        meta(name="author", content="")
+        meta(name="keywords", content="")        
+
+        //- FAVICONS info
+        link(rel="icon", href="icon_path", type="image/png", sizes="16x16")
+
+        //- Outside styling and links info
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)        
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap", rel="stylesheet")
+
+        //- Local styling
+        link(rel="stylesheet", href="/style.css")
+
+        //- Dynamic content for head (css'es)
+        block head
+    body
+     //- Captured default body in block to easily replace it by login page
+     block forLoginBody     
+        .wrapper
+            //- NAV SECTION
+            aside.logo 
+                img(src="/Pop_Search_Logo.png", alt="logo")
+            nav.nav_bar
+                ul
+                    li.nav_item
+                        input(type="text", placeholder="Search", class="nav_search")
+                    li.nav_item
+                        a(href="/admin") Admin
+                    li.nav_item
+                        a(href="/continents") Data
+                    li.nav_item
+                        a(href="/login") <i class="fas fa-user"></i>
+
+            //- 1ST SECTION
+            block section1Wrap
+             block section1Content
+                //- Section with future graphics
+                section.graph
+                    .graph_container
+                        header
+                            h1.graph_title Graph
+                        .graph_content [Content]
+                        ul.graph_filters
+                            li.graph_filter            
+                                    input(type="checkbox", name="continentsCheckbox", id="")
+                                    | Continents
+                            li.graph_filter            
+                                    input(type="checkbox", name="countriesCheckbox", id="")
+                                    | Countries
+                            li.graph_filter  
+                                    input(type="checkbox", name="citiesCheckbox", id="")
+                                    | Cities
+
+            //- 2ND SECTION - displaying database data           
+            block section2Wrap
+             block section2Content
+                section.data                        
+                        .data_container
+                            //- Wrapped in block for index.pug which has initially different structure
+                            block section2  
+                                header
+                                    h1.data_title Data:                               
+                                
+                                .data_btn(name='cities')
+                                    a(href="/cities") Cities
+
+                                .data_btn(name='continents')                                 
+                                    a(href="/continents") Continents
+
+                                .data_btn(name='countries') 
+                                    a(href="/countries") Countries
+
+                                .data_btn(name='regions') 
+                                    a(href="/regions") Regions
+
+                                .data_btn(name='capital cities') 
+                                    a(href="/capitals") Capital Cities
+
+                                .data_btn(name='districts') 
+                                    a(href="/districts") Districts
+
+                                .data_droplist(name='population')
+                                    | Population
+                                    ul
+                                        li.data_li
+                                            a(href="/population/continent") Continents 
+                                        li.data_li
+                                            a(href="/population/region") Regions 
+                                        li.data_li
+                                            a(href="/population/country") Countries 
+
+                                .data_btn(name='languages')  
+                                    a(href="/languages") Languages
+
+
+                                .data_droplist(name='export')
+                                    | Export:
+                                    ul
+                                        li Table
+                                        li Graph
+
+                                .data_droplist(name='display')
+                                    | Display:
+                                    ul
+                                        li Map
+                                        li Graph
+
+                                .data_droplist(name='filter')
+                                    | Filter
+                                    ul
+                                        li.data_li
+                                            input(type="text", placeholder="City",name='filterCity',class="data_filter", autocomplete="none",onchange="filter()")
+                                        li.data_li
+                                            input(type="text", placeholder="District",name='filterDistrict',class="data_filter", autocomplete="none",onchange="filter()")
+                                        li.data_li
+                                            input(type="text", placeholder="Country",name='filterCountry',class="data_filter", autocomplete="none",onchange="filter()")
+                                        li.data_li
+                                            input(type="text", placeholder="Region",name='filterRegion',class="data_filter", autocomplete="none",onchange="filter()")
+                                        li.data_li
+                                            input(type="text", placeholder="Continent",name='filterContinent',class="data_filter", autocomplete="none",onchange="filter()")
+
+                                .data_droplist(name='show')
+                                    | Show
+                                    ul
+                                        li.data_li
+                                            input(type="text", placeholder="'N' records",class="N", autocomplete="none",
+                                            onchange="updateLimit()")
+                                .data_content
+                                    //- Really dynamic content for this block 
+                                    block dataContent
+                                //- Buttons wrapped in block as not every page has the same ones                             
+                                block adjustmentButtons
+
+                                    .data_droplist.loginDepended(name='delete')
+                                        | Delete
+                                        form(action='/delete', method='POST')
+                                            ul
+                                                li.data_li
+                                                    input(type="text", name="cityDelete", placeholder="City ID", class="data_filter", autocomplete="none")
+                                                li.data_li
+                                                    input(type="text", name="countryDeleteCode", placeholder="Country code", class="data_filter", autocomplete="none")
+                                                //- li.data_li
+                                                button.data_btn(type="submit") Submit
+                                    
+            //- FOOTER 
+            footer.footer
+                .footer_contact
+                    h3 Contact Us
+                    input(type="text", placeholder="Your Name")
+                    input(type="text", placeholder="Your Email")
+                    textarea(name="", cols="30", rows="10" placeholder="Your Message")
+                    button.data_btn(type="submit") Submit
+                .footer_siteMap
+                    h3 Site Map
+                    a(href="/") Home
+                    a(href="/continents") Data
+                    a(href="") About Us
+                .footer_icons
+                    .footer_logo Logo
+                    .footer_icon 
+                        a(href="") <i class="fa fa-phone" aria-hidden="true"></i>
+                    .footer_icon 
+                        a(href="") <i class="fa fa-envelope" aria-hidden="true"></i>
+                    .footer_icon 
+                        a(href="") <i class="fa fa-linkedin-square" aria-hidden="true"></i>     
+     //- SCRIPTS for icons and extra functionality
+     <script src="https://kit.fontawesome.com/4622d99ad4.js" crossorigin="anonymous"></script>
+     block extraScripts
+     script(type='application/javascript' src="../services/actions.js")
+
+    

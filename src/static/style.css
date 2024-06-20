@@ -3,6 +3,10 @@
 	--second-color: #91c8e4;
 	--third-color: #749bc2;
 	--shadow-color: #4682a9;
+	--loginStatus: none;
+}
+.loginDepended {
+	display: var(--loginStatus);
 }
 
 * {
@@ -34,13 +38,17 @@ body {
 		'footer footer footer footer';
 	background-color: var(--first-color);
 }
-
 /* Logo */
 .logo {
 	grid-area: logo;
-	text-align: center;
+	text-align: right;
 	line-height: 10vh;
 	font-weight: bold;
+	z-index: 4;
+}
+img {
+	/* display: block; */
+	width: 15vh;
 }
 
 /* Navigation */
@@ -193,14 +201,14 @@ section header {
 	grid-template-rows: auto repeat(8, 2em) 1fr 2em;
 	grid-template-areas:
 		'header 	header		header		header		header		header		header'
-		'cities		table 		table 		table 		table 		table 		filter	'
-		'continents table 		table 	  	table   	table 		table 		display	'
-		'countries 	table 		table 		table 		table 		table 		.		'
-		'regions 	table 		table 		table 		table 		table 		.		'
+		'continents table 		table 	  	table   	table 		table 		show	'
+		'regions 	table 		table 		table 		table 		table 		filter	'
+		'countries 	table 		table 		table 		table 		table 		display	'
+		'districts	table 		table 		table 		table 		table 		.		'
+		'cities		table 		table 		table 		table 		table 		.		'
 		'capitals 	table 		table 		table 		table 		table 		.		'
 		'population	table 		table 		table 		table 		table 		.		'
 		'languages	table 		table 		table 		table 		table 		.		'
-		'.			table 		table 		table 		table 		table 		.		'
 		'.			table 		table 		table 		table 		table 		.		'
 		'.		 	. 			.		 	delete 		.	 		. 			.		';
 	grid-gap: 15px 10px;
@@ -218,13 +226,14 @@ section header {
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
+	transition: 0.3s ease-in-out;
 }
 .data_btn {
 	background-color: var(--second-color);
 }
 
 .data_droplist ul {
-	transition: max-height 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
 	max-height: 0;
 	overflow: hidden;
 	position: absolute;
@@ -238,7 +247,8 @@ section header {
 
 .data_droplist ul input {
 	width: 90%;
-	padding-left: 5px;
+	padding: 0 5px;
+	text-align: center;
 }
 
 .data_droplist:hover {
@@ -258,6 +268,9 @@ section header {
 	grid-area: display;
 }
 
+.data_droplist[name='show'] {
+	grid-area: show;
+}
 .data_droplist[name='filter'] {
 	grid-area: filter;
 }
@@ -276,8 +289,12 @@ section header {
 .data_btn[name='capital cities'] {
 	grid-area: capitals;
 }
-.data_btn[name='population'] {
+.data_btn[name='districts'] {
+	grid-area: districts;
+}
+.data_droplist[name='population'] {
 	grid-area: population;
+	z-index: 5;
 }
 .data_btn[name='languages'] {
 	grid-area: languages;
@@ -329,6 +346,7 @@ footer div * {
 .footer_contact .data_btn {
 	width: 150px;
 	padding: 0;
+	font-family: Montserrat;
 	background-color: var(--first-color);
 }
 

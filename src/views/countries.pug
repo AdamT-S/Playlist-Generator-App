@@ -1,0 +1,25 @@
+extends layout.pug
+
+//- Extra css
+block head 
+    link(rel="stylesheet", href="/data_content_table.css")
+
+block dataContent
+    //- Table content part
+    table.data_table      
+        tr
+            th Code
+            th Name
+            th Population
+        each country in countries
+            tr
+                td #{country.code}
+                td 
+                    a(href=`/continents/${country.continent}/${country.name}`) #{country.name}
+                td #{country.population}
+    
+
+
+    
+  
+    

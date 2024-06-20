@@ -1,0 +1,19 @@
+mixin navigation
+  nav
+    a(href="/")
+      b My Website
+    a(href="/cities") Cities
+    a(href="/about") About 
+
+mixin table([...headers])
+   table.data_table            
+        tr
+          for h in headers
+            th= h            
+    
+        each continent in dataset
+            tr
+                td 
+                    a(href=`/continents/${continent.name}`) #{continent.name}
+                td #{continent.numberOfCountries}
+                td #{continent.population}

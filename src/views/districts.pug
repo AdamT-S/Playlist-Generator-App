@@ -1,0 +1,23 @@
+extends layout.pug
+
+//- Extra css
+block head 
+    link(rel="stylesheet", href="/data_content_table.css")
+    style.
+        .data_table tr td:last-child, .data_table tr th:last-child {
+            text-align: center;
+            }
+block dataContent
+    //- Table content part
+    table.data_table
+        tr
+            th Country Code
+            th District
+            th Total Population 
+    
+        each district in districts
+            tr
+                td #{district.owningCountryCode}
+                td 
+                    a(href=`/districts/${district.name}`) #{district.name}
+                td #{district.population}
