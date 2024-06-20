@@ -1,0 +1,23 @@
+extends layout.pug
+
+//- Extra css
+block head
+    link(rel="stylesheet", href="/data_content_header.css")
+
+block dataContent    
+    //- content description part
+    
+    h2 #{city.name} (ID: #{city.id})
+    .cityDesc
+        p 
+            span Country: 
+            | #{country.name}
+        p 
+            span Country code: 
+            | #{city.countryCode}
+        p 
+            span District: 
+            | #{city.district}
+        p 
+            span Population: 
+            | #{city.population}

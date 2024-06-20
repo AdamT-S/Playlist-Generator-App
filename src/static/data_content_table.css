@@ -1,0 +1,107 @@
+/* Layout switch */
+.wrapper {
+	grid-template-areas:
+		'logo . nav nav'
+		'data data data data'
+		'visual visual visual visual'
+		'footer footer footer footer';
+}
+.graph {
+	background-color: var(--second-color);
+}
+.data {
+	background-color: var(--first-color);
+}
+
+/* Data Section */
+
+.data_content {
+	grid-area: table;
+	margin: 0 0.5em;
+	padding: 0 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.data_table {
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	background-color: var(--first-color);
+}
+
+.data_table * {
+	height: 2em;
+	line-height: 2em;
+}
+
+.data_table th {
+	position: sticky; /* Make the header sticky */
+	top: 0;
+	z-index: 2;
+	padding: 0 10px;
+	background-color: var(--third-color);
+}
+
+.data_table tr + tr:hover {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.data_table tr:first-child {
+	border-bottom: 1px solid var(--shadow-color);
+}
+
+.data_table tr:nth-child(2n + 2) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.data_table tr * {
+	text-align: center;
+}
+
+.data_table tr td:last-child,
+.data_table tr th:last-child {
+	padding-right: 1rem;
+	text-align: right;
+}
+
+.data_table tr a {
+	white-space: nowrap;
+	max-width: 100%;
+	padding: 0px 10px;
+	margin: 3px auto;
+	display: block;
+	list-style: none;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 500;
+	font-style: italic;
+	color: black;
+	transition: 0.3s ease-in-out;
+}
+
+.data_table tr a:hover {
+	text-shadow: 0px 0px 8px var(--shadow-color);
+	text-decoration: underline;
+}
+
+/* Hide the default scrollbar */
+.data_content ::-webkit-scrollbar {
+	display: none;
+}
+
+/* Create a custom scrollbar */
+.data_content {
+	scrollbar-width: thin;
+	scrollbar-color: var(--third-color) #f2f2f2;
+	overflow-y: auto;
+}
+
+.data_content ::-webkit-scrollbar-track {
+	background-color: #f2f2f2;
+}
+
+.data_content ::-webkit-scrollbar-thumb {
+	background-color: var(--second-color);
+	border-radius: 10px;
+}

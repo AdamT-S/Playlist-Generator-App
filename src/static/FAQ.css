@@ -1,0 +1,95 @@
+.wrapper {
+	grid-template-rows: 10vh minmax(auto, 80vh) 1fr 20vh;
+}
+
+.data {
+	background-color: var(--second-color);
+}
+
+.accordion-item {
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border-radius: 0.4rem;
+	background-color: white;
+	box-shadow: 0.5rem 2px rgba(0, 0, 0, 0.5);
+}
+
+.accordion-link {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	background-color: none;
+	text-decoration: none;
+	font-size: 1.6rem;
+	font-weight: 300;
+	color: black;
+}
+
+.accordion-link .ion-add-outline,
+.accordion-link .ion-remove-outline {
+	padding: 0.5rem;
+	color: #e7d5ff;
+}
+
+.hide {
+	display: none;
+}
+
+.answer {
+	max-height: 0;
+	position: relative;
+	overflow: hidden;
+	background-color: var(--first-color);
+	transition: all 650ms;
+}
+
+.answer::before {
+	content: '';
+	position: absolute;
+	width: 0.6rem;
+	height: 90%;
+	top: 50%;
+	left: 0;
+	background-color: var(--third-color);
+	transform: translateY(-50%);
+}
+
+.answer p {
+	font-size: 1.4rem;
+}
+
+.accordion-item:target .answer {
+	max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .ion-add-outline {
+	display: none;
+}
+
+.data_container {
+	grid-template-rows: repeat(5, 100px);
+	grid-template-areas:
+		'header header header header header header header'
+		'. . faq1 faq1 faq1 . .'
+		'. . faq2 faq2 faq2 . .'
+		'. . faq3 faq3 faq3 . .'
+		'. . faq4 faq4 faq4 . .';
+}
+
+.accordion-item:nth-of-type(1) {
+	grid-area: faq1;
+}
+
+.accordion-item:nth-of-type(2) {
+	grid-area: faq2;
+}
+
+.accordion-item:nth-of-type(3) {
+	grid-area: faq3;
+}
+
+.accordion-item:nth-of-type(4) {
+	grid-area: faq4;
+}

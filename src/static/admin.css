@@ -1,0 +1,14 @@
+.wrapper {
+	grid-template-rows: 10vh minmax(auto, 80vh) 20vh;
+	grid-template-areas:
+		'logo . nav nav'
+		'data data data data'
+		'footer footer footer footer';
+}
+.data_btn,
+.data_droplist {
+	background-color: var(--second-color);
+}
+footer {
+	margin-top: 2rem;
+}
