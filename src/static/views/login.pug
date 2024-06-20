@@ -1,0 +1,38 @@
+extends layout.pug
+
+//- Extra css
+block head
+  link(rel="stylesheet", href="login.css")
+  
+//- Entire body replaced
+block forLoginBody
+  header
+    .wrapper
+      .form-box.login
+        h2 Welcome
+        form(action="#")
+          .input-box
+            span.icon
+              ion-icon(name="mail-outline")
+            input(type="email", required)
+            label Email
+          .input-box
+            span.icon
+              ion-icon(name="lock-closed-outline")
+            input(type="password", required)
+            label Password
+          .remember-forget
+              label
+                input(type="checkbox")
+                | Remember me
+              a(href="#") Forget Password?
+          button.data_btn(type="submit") login
+          .login-register
+        p
+          | Don't have an account?
+          a.registerlink(href="#") Register
+
+//- Extra scripts required for smooth movements 
+block extraScripts
+  script(type="module", src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
+  script(nomodule, src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")
