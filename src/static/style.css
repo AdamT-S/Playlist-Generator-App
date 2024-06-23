@@ -4,7 +4,21 @@
 	--third-color: #749bc2;
 	--shadow-color: #4682a9;
 	--loginStatus: none;
+  --primary-rgb: 100, 113, 182;
+  --secondary-rgb: 177, 177, 177;
+  --color3-rgb: 222, 224, 235;
+  --color4-rgb: 185, 195, 252;
+  --color-1f1: #1f1f1f;
+  --color-white-button: #fff;
+  --color-b8b: #b8b8b8;
+  --color-f21: #F23D3F;
+  --pre-bg-rgb: 31, 31, 31;
+  --scrollbar-hover: #4a4a4a;
+  --scrollbar-active: #383838;
+  --fade-rgb: 34, 34, 34;	
+	--loginStatus: none;
 }
+
 .loginDepended {
 	display: var(--loginStatus);
 }
@@ -16,7 +30,7 @@
 }
 
 html {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Audiowide', sans-serif;
 	color: #222;
 	font-size: 10px;
 }
@@ -32,23 +46,22 @@ body {
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
 	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
 	grid-template-areas:
-		'logo . nav nav'
+		'nav nav nav nav'
 		'visual visual visual visual'
 		'data data data data'
 		'footer footer footer footer';
-	background-color: var(--first-color);
-}
+	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);}
 /* Logo */
 .logo {
-	grid-area: logo;
-	text-align: right;
+	grid-area: nav;
+	text-align: left;
 	line-height: 10vh;
 	font-weight: bold;
 	z-index: 4;
 }
 img {
 	/* display: block; */
-	width: 15vh;
+	width: 10vh;
 }
 
 /* Navigation */
@@ -57,8 +70,7 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--first-color);
-}
+	background: linear-gradient(rgba(var(--color3-rgb), 1) 0%, rgba(var(--color4-rgb), 1) 100%);}
 
 .nav_bar ul {
 	height: 30px;
@@ -66,7 +78,6 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--third-color);
 	list-style: none;
 	border-radius: 5px;
 }
@@ -152,8 +163,7 @@ section header {
 /* Graph Section */
 .graph {
 	grid-area: visual;
-	background-color: var(--first-color);
-}
+ background: linear-gradient(rgba(var(--primary-rgb), 0) 0%, rgba(var(--primary-rgb), 1) 100%);}
 
 .graph_container {
 	height: 100%;
