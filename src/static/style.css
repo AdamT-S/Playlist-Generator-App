@@ -4,25 +4,31 @@
 	--third-color: #749bc2;
 	--shadow-color: #4682a9;
 	--loginStatus: none;
+  --primary-rgb: 100, 113, 182;
+  --secondary-rgb: 177, 177, 177;
+  --color3-rgb: 222, 224, 235;
+  --color4-rgb: 185, 195, 252;
 }
+
 .loginDepended {
 	display: var(--loginStatus);
 }
 
 * {
-	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
 html {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Audiowide', sans-serif;
 	color: #222;
 	font-size: 10px;
 }
 
 body {
+	margin: 10;
 	font-size: 1.8rem;
+	background-color: black;
 }
 
 .wrapper {
@@ -32,23 +38,22 @@ body {
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
 	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
 	grid-template-areas:
-		'logo . nav nav'
+		'nav nav nav nav'
 		'visual visual visual visual'
 		'data data data data'
 		'footer footer footer footer';
-	background-color: var(--first-color);
-}
+	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);}
 /* Logo */
 .logo {
 	grid-area: logo;
-	text-align: right;
+	text-align: left;
 	line-height: 10vh;
 	font-weight: bold;
 	z-index: 4;
 }
 img {
 	/* display: block; */
-	width: 15vh;
+	width: 10vh;
 }
 
 /* Navigation */
@@ -57,8 +62,7 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--first-color);
-}
+	background: linear-gradient(rgba(var(--color3-rgb), 1) 0%, rgba(var(--color4-rgb), 1) 100%);}
 
 .nav_bar ul {
 	height: 30px;
@@ -66,7 +70,6 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--third-color);
 	list-style: none;
 	border-radius: 5px;
 }
@@ -79,8 +82,8 @@ img {
 
 input,
 textarea {
-	border: 1px solid #999;
-	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	border-radius: 1px;
 	padding-left: 10px;
 	text-align: left;
 	font-family: inherit;
@@ -152,8 +155,7 @@ section header {
 /* Graph Section */
 .graph {
 	grid-area: visual;
-	background-color: var(--first-color);
-}
+ background: linear-gradient(rgba(var(--primary-rgb), 0) 0%, rgba(var(--primary-rgb), 1) 100%);}
 
 .graph_container {
 	height: 100%;

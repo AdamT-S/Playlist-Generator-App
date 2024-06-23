@@ -15,7 +15,8 @@ html(lang="en")
         //- Outside styling and links info
         link(rel="preconnect", href="https://fonts.googleapis.com")
         link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)        
-        link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap", rel="stylesheet")
+        //-link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Audiowide", rel="stylesheet")
 
         //- Local styling
         link(rel="stylesheet", href="/style.css")
@@ -27,16 +28,18 @@ html(lang="en")
      block forLoginBody     
         .wrapper
             //- NAV SECTION
-            aside.logo 
-                img(src="/Pop_Search_Logo.png", alt="logo")
+            //- aside.logo 
+                img(src="/Music Player Logo small.png", alt="logo")
             nav.nav_bar
                 ul
+                    li.nav_item 
+                        img(src="/Music Player Logo small.png", alt="logo")
                     li.nav_item
                         input(type="text", placeholder="Search", class="nav_search")
                     li.nav_item
-                        a(href="/admin") Boop
+                        a(href="/admin") Library
                     li.nav_item
-                        a(href="/continents") Bingbong
+                        a(href="/continents") Setings
                     li.nav_item
                         a(href="/login") <i class="fas fa-user"></i>
 
@@ -47,7 +50,7 @@ html(lang="en")
                 section.graph
                     .graph_container
                         header
-                            h1.graph_title Graph
+                            h1.graph_title Music Player
                         .graph_content [Content]
                         ul.graph_filters
                             li.graph_filter            
