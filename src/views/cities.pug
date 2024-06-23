@@ -1,0 +1,33 @@
+extends layout.pug
+
+//- Extra css
+block head 
+    link(rel="stylesheet", href="/data_content_table.css")
+
+block dataContent
+    //- Table content part
+    table.data_table
+        -let ObjProperties = Object.keys(dataset[0])
+        -let firstPropName = ObjProperties[0]        
+        -let secondPropName = ObjProperties[1]
+        -let lastPropName = ObjProperties[ObjProperties.length -1]
+        -let headers = [firstPropName,secondPropName,lastPropName]
+        
+
+        tr
+            th #{headers[0].toUpperCase()}
+            th #{headers[1].toUpperCase()} 
+            th #{headers[2].toUpperCase()}
+        
+        each datum in dataset
+            tr
+                td #{datum[firstPropName]}
+                td 
+                    a(href=`/cities/city/${datum[firstPropName]}`) #{datum[secondPropName]}
+                td #{datum[lastPropName]}
+    
+
+
+    
+  
+    

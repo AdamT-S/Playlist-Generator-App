@@ -1,12 +1,13 @@
 export default class Continent {
 	name;
 	population;
-	Num_Of_Countries;
-	
+	numberOfCountries;
+	worldPopulation;
 
-	constructor(name, population, Num_Of_Countries) {
+	constructor(name, population, numberOfCountries, worldPopulation) {
 		this.name = name;
-        this.population = population;
-        this.Num_Of_Countries = Num_Of_Countries;
+		this.population = population;
+		this.numberOfCountries = numberOfCountries;
+		this.worldPopulation = worldPopulation;
 	}
 }
