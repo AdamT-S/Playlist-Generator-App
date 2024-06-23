@@ -8,15 +8,6 @@
   --secondary-rgb: 177, 177, 177;
   --color3-rgb: 222, 224, 235;
   --color4-rgb: 185, 195, 252;
-  --color-1f1: #1f1f1f;
-  --color-white-button: #fff;
-  --color-b8b: #b8b8b8;
-  --color-f21: #F23D3F;
-  --pre-bg-rgb: 31, 31, 31;
-  --scrollbar-hover: #4a4a4a;
-  --scrollbar-active: #383838;
-  --fade-rgb: 34, 34, 34;	
-	--loginStatus: none;
 }
 
 .loginDepended {
@@ -24,7 +15,7 @@
 }
 
 * {
-	margin: 0;
+	margin: 3;
 	padding: 0;
 	box-sizing: border-box;
 }
@@ -37,6 +28,7 @@ html {
 
 body {
 	font-size: 1.8rem;
+	background-color: black;
 }
 
 .wrapper {
@@ -46,14 +38,14 @@ body {
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
 	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
 	grid-template-areas:
-		'nav nav nav nav'
+		'logo . nav nav'
 		'visual visual visual visual'
 		'data data data data'
 		'footer footer footer footer';
 	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);}
 /* Logo */
 .logo {
-	grid-area: nav;
+	grid-area: logo;
 	text-align: left;
 	line-height: 10vh;
 	font-weight: bold;
@@ -67,6 +59,12 @@ img {
 /* Navigation */
 .nav_bar {
 	grid-area: nav;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));
+	grid-template-areas:
+		'logo . nav nav'
+		'visual visual visual visual'
+		'data data data data'
+		'footer footer footer footer';
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -90,8 +88,8 @@ img {
 
 input,
 textarea {
-	border: 1px solid #999;
-	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	border-radius: 1px;
 	padding-left: 10px;
 	text-align: left;
 	font-family: inherit;
