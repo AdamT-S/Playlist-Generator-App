@@ -15,7 +15,6 @@
 }
 
 * {
-	margin: 3;
 	padding: 0;
 	box-sizing: border-box;
 }
@@ -27,6 +26,7 @@ html {
 }
 
 body {
+	margin: 10;
 	font-size: 1.8rem;
 	background-color: black;
 }
@@ -38,7 +38,7 @@ body {
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
 	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
 	grid-template-areas:
-		'logo . nav nav'
+		'nav nav nav nav'
 		'visual visual visual visual'
 		'data data data data'
 		'footer footer footer footer';
@@ -59,12 +59,6 @@ img {
 /* Navigation */
 .nav_bar {
 	grid-area: nav;
-	grid-template-columns: repeat(4, minmax(100px, 1fr));
-	grid-template-areas:
-		'logo . nav nav'
-		'visual visual visual visual'
-		'data data data data'
-		'footer footer footer footer';
 	display: flex;
 	justify-content: center;
 	align-items: center;
