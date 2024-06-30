@@ -38,10 +38,10 @@ body {
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
 	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
 	grid-template-areas:
-		'nav nav nav nav'
-		'visual visual visual visual'
-		'data data data data'
-		'footer footer footer footer';
+		'nav nav nav nav nav play'
+		'visual visual visual visual visual play'
+		'data data data data data play'
+		'footer footer footer footer footer play';
 	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);}
 /* Logo */
 .logo {
@@ -164,15 +164,15 @@ section header {
 	grid-template-rows: auto 3fr 1fr;
 	grid-template-areas:
 		'header header header header header header header'
-		'. content content content content content .' 'filters . . . . . .';
-	justify-content: center;
+		'content content content content content content content';
+	justify-content: left;
 }
 
 .graph_content {
 	grid-area: content;
 	display: flex;
 	justify-content: left;
-	align-items: center;
+	align-items: left;
 }
 
 .graph_filters {
@@ -188,6 +188,30 @@ section header {
 
 .graph_filter input {
 	margin-right: 10px;
+}
+
+/* Play Section */
+.play {
+	background-color: var(--second-color);
+	grid-area: play;
+	width: 400;
+}
+
+.play_container {
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, minmax(auto, 150px));
+	grid-template-rows: auto 3fr 1fr;
+	grid-template-areas:
+		'play play play play';
+	justify-content: center;
+}
+
+.play_content {
+	grid-area: play;
+	display: flex;
+	justify-content: left;
+	align-items: left;
 }
 
 /* Data Section */

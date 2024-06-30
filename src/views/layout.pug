@@ -35,11 +35,13 @@ html(lang="en")
                     li.nav_item 
                         img(src="/Music Player Logo small.png", alt="logo")
                     li.nav_item
-                        input(type="text", placeholder="Search", class="nav_search")
-                    li.nav_item
                         a(href="/admin") Library
                     li.nav_item
-                        a(href="/continents") Setings
+                        a(href="/continents") Settings
+                    li.nav_item
+                        input(type="text", placeholder="Search", class="nav_search")
+                    li.nav_item
+                        a(href="/continents") About                    
                     li.nav_item
                         a(href="/login") <i class="fas fa-user"></i>
 
@@ -51,10 +53,19 @@ html(lang="en")
                     .graph_container
                         header
                             img(src="/Music Player Title Name.png", style="width: 400px; height:auto;", class="title-name")
-                        .graph_content [Content]
+                        .graph_content
+                            | Your Recently Played Songs
+                            br
+                            br
+                            | Your Recent Playlists
 
+            block playSectionWrap  
+             block playSectionContent
+                section.play
+                    .play_container
+                            img(src="/No album cover.png", style="width: 350; height:auto;")
             //- 2ND SECTION - displaying database data           
-            block section2Wrap
+            //- block section2Wrap
              block section2Content
                 section.data                        
                         .data_container
@@ -145,7 +156,7 @@ html(lang="en")
                                                 button.data_btn(type="submit") Submit
                                     
             //- FOOTER 
-            footer.footer
+            //- footer.footer
                 .footer_contact
                     h3 Contact Us
                     input(type="text", placeholder="Your Name")
