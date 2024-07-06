@@ -83,7 +83,7 @@ img {
 input,
 textarea {
 	border: 1px solid #E0E0E0;
-	border-radius: 1px;
+	border-radius: 10px;
 	padding-left: 10px;
 	text-align: left;
 	font-family: inherit;
@@ -107,22 +107,46 @@ button {
 }
 
 a {
-	width: 100px;
-	padding: 0px 10px;
+	width: 85px;
+	margin: 10px;
 	display: block;
 	list-style: none;
 	text-align: center;
 	text-decoration: none;
-	font-weight: bold;
 	color: black;
+	background-image: url("Button Background.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+a.logo {
+	background-image: none;
+	width: 85px;
+	margin: 10px;
+	display: block;
+	list-style: none;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	background-size: contain;
 	transition: all 0.2s ease-in-out;
 	cursor: pointer;
 }
 
 a:hover {
-	text-shadow: 0px 0px 8px var(--shadow-color);
-	text-decoration: underline;
+	/*text-shadow: 0px 0px 8px var(--shadow-color); */
+	box-shadow: 0px 0px 8px var(--shadow-color); 
+	/* text-decoration: underline; */
 }
+
+a.logo:hover {
+	/*text-shadow: 0px 0px 8px var(--shadow-color); */
+	box-shadow: none 
+	/* text-decoration: underline; */
+}
+
 .data_btn a {
 	display: inline;
 	padding: 0;
@@ -338,7 +362,7 @@ section header {
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-footer {
+/* footer {
 	background-color: var(--third-color);
 	grid-area: footer;
 	min-height: 25vh;
@@ -388,7 +412,7 @@ a {
 	padding-top: 3px;
 	padding-bottom: 3px;
 	width: 80%;
-	max-width: 300px;
+	max-width: 300spx;
 }
 .footer input,
 textarea {
@@ -439,4 +463,4 @@ textarea {
 	background-color: var(--second-color);
 	text-align: center;
 	line-height: 80px;
-}
+} */
