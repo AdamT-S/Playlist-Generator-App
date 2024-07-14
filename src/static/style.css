@@ -37,11 +37,17 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
 	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
-	grid-template-areas:
+	/* grid-template-areas:
 		'nav nav nav nav nav play'
 		'visual visual visual visual visual play'
 		'data data data data data play'
-		'footer footer footer footer footer play';
+		'footer footer footer footer footer play'; */
+	grid-template-areas:
+		'nav nav nav nav nav nav'
+		'visual visual visual visual visual visual'
+		'data data data data data data'
+		'footer footer footer footer footer footer';
+
 	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);}
 /* Logo */
 .logo {
@@ -107,32 +113,31 @@ button {
 }
 
 a {
-	width: 85px;
+	width: 102.75px;
+	height: 26.55px;
+	line-height: 26.55px;
+	padding: 0px;
 	margin: 10px;
 	display: block;
 	list-style: none;
-	text-align: center;
+	text-align:center;
 	text-decoration: none;
 	color: black;
 	background-image: url("Button Background.png");
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-position: center;
+	background-size:contain;
 	transition: all 0.2s ease-in-out;
 	cursor: pointer;
+	border-radius: 10%;
+}
+
+a.login {
+	background-image: url("Circle Button Background.png");
 }
 
 a.logo {
 	background-image: none;
-	width: 85px;
-	margin: 10px;
-	display: block;
-	list-style: none;
-	text-align: center;
-	text-decoration: none;
-	color: black;
-	background-size: contain;
-	transition: all 0.2s ease-in-out;
-	cursor: pointer;
 }
 
 a:hover {
@@ -143,8 +148,12 @@ a:hover {
 
 a.logo:hover {
 	/*text-shadow: 0px 0px 8px var(--shadow-color); */
-	box-shadow: none 
+	/* box-shadow: none  */
 	/* text-decoration: underline; */
+}
+
+a.login:hover {
+	
 }
 
 .data_btn a {
