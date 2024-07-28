@@ -20,12 +20,13 @@
 }
 
 html {
-	font-family: 'Audiowide';
-	color: #000000;
+	font-family: inherit;
+	color: #ffffff;
 	font-size: 10px;
 }
 
 body {
+	font-family: 'Inter';
 	margin: 10;
 	font-size: 1.8rem;
 	background-color: black;
@@ -48,7 +49,7 @@ body {
 		'data data data data data data'
 		'footer footer footer footer footer footer'; */
 
-	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);}
+	background: linear-gradient(rgba(var(--secondary-rgb), 1) 0%, rgba(var(--primary-rgb), 1) 100%);};
 /* Logo */
 .logo {
 	grid-area: logo;
@@ -64,6 +65,7 @@ img {
 
 /* Navigation */
 .nav_bar {
+	font-family: 'Audiowide';
 	grid-area: nav;
 	display: flex;
 	justify-content: center;
